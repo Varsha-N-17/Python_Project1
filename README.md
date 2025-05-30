@@ -65,4 +65,21 @@ The dataset includes:
 
 ```python
 
+Transaction_details.head()
+
+Offers_details.columns
+Offers_details.isna().sum()
+
+sns.countplot(data=Offers_details,y="offer_type",width=0.5,color="mediumslateblue")
+plt.title("Distribution of offer types")
+
+Customers_info.info()
+print('Number of events: {}'.format(Transaction_details.shape[0]))
+print('Number of users: {}'.format(Transaction_details['person'].nunique()))
+plt.savefig("Offer_details_Offer_type")
+
+fig,axes=plt.subplots(nrows=1,ncols=2,figsize=(7,3))
+--`for analysing Gender Column`
+sns.barplot(data=Combined_data,y="gender",x="income",color="mediumslateblue",ax=axes[0])plt.title("Gender Distribution of users with their icome and count",weight="bold")plt.figure()#Calculate count of unique gender#plot distribution of gender count in dataframeUser_count=Combined_data.groupby(["gender"],as_index=False).agg(No_of_User=("person","count"))sns.barplot(data=User_count,x="No_of_User",y="gender",color="mediumslateblue",ax=axes[1])User_count
+
 
